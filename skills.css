@@ -1,0 +1,229 @@
+/* Global Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #000; /* Black background */
+    color: #fff;
+    height: 90px;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation Bar */
+.navbar {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #00c8ff;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 10px;
+}
+
+.nav-links li {
+    margin: 0 10px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 8px 12px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: #00c8ff;
+    color: #000;
+    border-radius: 5px;
+}
+
+/* Main Container */
+.container {
+    width: 90%;
+    max-width: 1000px; /* Reduced size for a compact look */
+    margin: 30px auto;
+    text-align: center;
+}
+
+/* Header */
+h2 {
+    font-size: 3em;
+    color: #66fcf1; /* Changed header color */
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: headerPopIn 1s ease-out forwards;
+}
+
+/* Header Animation */
+@keyframes headerPopIn {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* Skills Grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 75px; /* Increased space between the cards */
+    justify-items: center;
+    padding: 20px 0; /* Additional padding for grid area */
+}
+
+/* Skill Card */
+.skill-card {
+    background: linear-gradient(135deg, #222, #444);
+    padding: 30px;
+    border-radius: 15px;
+    width: 100%;
+    text-align: center;
+    transition: transform 0.4s, box-shadow 0.4s, background 0.4s;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-card:hover {
+    transform: translateY(-20px);
+    box-shadow: 0 16px 40px rgba(102, 252, 241, 0.3); /* Hover color shadow */
+    background: linear-gradient(135deg, #333, #66fcf1); /* Card background on hover */
+}
+
+.skill-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, transparent, rgba(255, 255, 255, 0.1) 80%);
+    transform: rotate(45deg);
+    transition: opacity 0.4s;
+    opacity: 0;
+}
+
+.skill-card:hover::before {
+    opacity: 1;
+}
+
+/* Skill Name */
+.skill-name {
+    font-size: 1.6em;
+    margin-bottom: 15px;
+    color: #66fcf1; /* Skill name color */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Progress Bar Container */
+.progress-bar-container {
+    background-color: #2a2a4d;
+    height: 15px;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Progress Bar */
+.progress-bar {
+    height: 100%;
+    width: 0;
+    background: #66fcf1; /* Skill percentage color */
+    border-radius: 10px;
+    transition: width 1.5s ease-in-out;
+}
+
+/* Skill Level */
+.skill-level {
+    font-weight: bold;
+    color: #66fcf1; /* Skill level color */
+    margin-top: 15px;
+    font-size: 1.2em;
+    transition: transform 0.4s;
+}
+
+.skill-card:hover .skill-level {
+    transform: scale(1.5);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 1024px) {
+    .container {
+        width: 95%;
+    }
+
+    h2 {
+        font-size: 2.5em;
+    }
+
+    .skills-grid {
+        gap: 50px; /* Adjust gap for medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 30px; /* Adjust gap for smaller screens */
+    }
+    .navbar {
+        flex-direction: column; /* Stack navbar elements */
+        padding: 10px; /* Reduce padding */
+    }
+
+    .nav-links {
+        flex-wrap: wrap; /* Allow links to wrap */
+        justify-content: center;
+    }
+
+    .nav-links li {
+        margin: 5px; /* Adjust spacing between links */
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+  
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 20px;
+    }
+    .navbar {
+        flex-direction: column; /* Ensure navbar stacks on small screens */
+    }
+
+    .nav-links a {
+        font-size: 14px; /* Reduce font size of navbar links */
+    }
+    
+
+    h2 {
+        font-size: 1.8em;
+    }
+}

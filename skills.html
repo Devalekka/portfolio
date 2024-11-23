@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Skills</title>
+    <link rel="stylesheet" href="skills.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">Devalekka</div>
+        <div class="nav-toggle" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">My Profile links</a></li>
+        </ul>
+    </div>
+    
+    <div class="container">
+        <h2>My Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-card html5">
+                <div class="skill-name">HTML </div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar"></div>
+                </div>
+                <div class="skill-level">70%</div>
+            </div>
+
+            <div class="skill-card css3">
+                <div class="skill-name">CSS </div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar"></div>
+                </div>
+                <div class="skill-level">70%</div>
+            </div>
+
+     
+         
+
+            <div class="skill-card reactjs">
+                <div class="skill-name">React JS</div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar"></div>
+                </div>
+                <div class="skill-level">75%</div>
+            </div>
+
+            <div class="skill-card jquery">
+                <div class="skill-name">Python</div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar"></div>
+                </div>
+                <div class="skill-level">70%</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const skillCards = document.querySelectorAll('.skill-card');
+
+            skillCards.forEach(card => {
+                const progressBar = card.querySelector('.progress-bar');
+                const skillLevel = card.querySelector('.skill-level');
+                const target = parseInt(skillLevel.textContent);
+
+                // Progress bar animation
+                setTimeout(() => {
+                    progressBar.style.width = `${target}%`;
+                    skillLevel.textContent = `${target}%`;
+                }, 500);
+            });
+        });
+        function toggleMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('show');
+}
+
+    </script>
+</body>
+</html>

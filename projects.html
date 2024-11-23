@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Activities</title>
+    <link rel="stylesheet" href="projects.css">
+</head>
+<body>
+       <!-- Navigation Bar -->
+       <nav class="navbar">
+        <div class="logo">Devalekka</div>
+       
+       
+            <ul class="nav-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="skills.html">Skills</a></li>
+              <li><a href="education.html">Education</a></li>
+              <li><a href="projects.html">Projects</a></li>
+              <li><a href="contact.html">My Profile links</a></li>
+            </ul>
+          </nav>
+    </nav>
+
+<!-- Activity Page Wrapper -->
+<div class="activity-page">
+    <h1>My Activities</h1>
+    <p>Select to view my Projects and Certifications.</p>
+
+    <!-- Tabs Navigation -->
+    <div class="tabs">
+        <button class="tab-button active" onclick="showTab('projects')">Projects</button>
+        <button class="tab-button" onclick="showTab('certifications')"> Course Certifications</button>
+        <button class="tab-button" onclick="showTab('My certificates')"> My certificates</button>
+    </div>
+
+    <!-- Projects Tab Content -->
+    <div id="projects" class="tab-content active">
+        <div class="card-container">
+            <!-- Project Card 1 -->
+            <div class="card">
+                <img src="Screenshot (18).png" alt="Project 1" class="card-image">
+                <div class="card-content">
+                    <h3>Website for an restaurant</h3>
+                    <p>I have an created an website in react.</p>
+                    <a href="https://sunny-sunburst-5c68f5.netlify.app" target="_blank">View on Netlify</a><br>
+                    <a href="https://github.com/Devalekka/friday" target="_blank">View on GitHub</a><br>
+                    <a href="file:///C:/Users/Devalekka/Downloads/DEVALEKKA%20FULL%20STACK%20PROJECT%20(1).pdf" target="_blank">View on Document</a>
+
+                    
+                </div>
+            </div>
+            
+            <!-- Project Card 2 -->
+            <div class="card">
+                <img src="Screenshot (17).png" alt="Project 2" class="card-image">
+                <div class="card-content">
+                    <h3>Website for an beauty shop</h3>
+                    <p>I have created website using HTML and CSS </p>
+                    <a href="https://devalekka.github.io/deva/index.html" target="_blank">View on GitHub</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Certifications Tab Content -->
+    <div id="certifications" class="tab-content">
+        <div class="card-container">
+            <!-- Certification Card 1 -->
+            <div class="card">
+                <div class="card-content">
+                    <h3>Intoduction to AI</h3>
+                    <p>Issued by Great learning </p>
+                    <a href="https://olympus.mygreatlearning.com/courses/61717/certificate?pb_id=581" target="_blank">View Certificate</a>
+                </div>
+            </div>
+
+            <!-- Certification Card 2 -->
+            <div class="card">
+                <div class="card-content">
+                    <h3>Data analysis using Excel</h3>
+                    <p>Issued by Great Learning</p>
+                    <a href="https://olympus.mygreatlearning.com/courses/62883/certificate?pb_id=581" target="_blank">View Certificate</a>
+                </div>
+            </div>
+          
+
+            <!-- Certification Card 2 -->
+            <div class="card">
+                <div class="card-content">
+                    <h3>Front End Technology</h3>
+                    <p>Issued by IBM</p>
+                    <a href="file:///C:/Users/Devalekka/Downloads/IBM%20final%20certificate.pdf" target="_blank">View Certificate</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+ <!-- Certifications Tab Content -->
+ <div id="My certificates" class="tab-content">
+    <div class="card-container">
+        <!-- Certification Card 1 -->
+        <div class="card">
+            <div class="card-content">
+                <h3>Data visualization using R programming and python</h3>
+                <p>Chettinadtech </p>
+                <a href="file:///C:/Users/Devalekka/Downloads/IMG_20241123_163206%20(2).pdf" target="_blank">View Certificate</a>
+            </div>
+        </div>
+
+        <!-- Certification Card 2 -->
+        <div class="card">
+            <div class="card-content">
+                <h3>Attended an symposium</h3>
+                <p> M.Kumarasamy college  </p>
+                <a href="file:///C:/Users/Devalekka/Downloads/IMG_20241123_162945%20(2).pdf" target="_blank">View Certificate</a>
+            </div>
+        </div>
+      
+
+        <!-- Certification Card 2 -->
+        <div class="card">
+            <div class="card-content">
+                <h3>AMD AI challenge workshop</h3>
+                
+                <a href="file:///C:/Users/Devalekka/Downloads/WhatsApp%20Image%202024-11-23%20at%206.08.32%20PM.pdf" target="_blank">View Certificate</a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<script>
+    // JavaScript for toggling tabs
+    function showTab(tabId) {
+        const contents = document.querySelectorAll('.tab-content');
+        const buttons = document.querySelectorAll('.tab-button');
+        
+        contents.forEach(content => content.classList.remove('active'));
+        buttons.forEach(button => button.classList.remove('active'));
+        
+        document.getElementById(tabId).classList.add('active');
+        document.querySelector(`.tab-button[onclick="showTab('${tabId}')"]`).classList.add('active');
+    }
+</script>
+
+</body>
+</html>

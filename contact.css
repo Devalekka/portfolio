@@ -1,0 +1,221 @@
+/* Contact CSS */
+:root {
+  --primary-color: #00c8ff;
+  --background-color: #000000;
+  --text-color: #ffffff;
+  --card-background: #141414;
+  --hover-color: #008ecc;
+  --animation-duration: 3s;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: var(--background-color);
+  color: var(--text-color);
+  overflow-x: hidden;
+}
+
+.navbar {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.navbar .logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin: 0 10px;
+}
+
+.nav-links a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 16px;
+  padding: 8px 12px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.nav-links a:hover {
+  background-color: var(--hover-color);
+  color: var(--background-color);
+  border-radius: 5px;
+}
+
+.contact-wrapper {
+  padding: 60px 5%;
+  text-align: center;
+}
+
+.contact-header h1 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  animation: fadeInText var(--animation-duration) ease-out;
+}
+
+.contact-header p {
+  font-size: 1.1rem;
+  margin: 20px 0 40px;
+  color: var(--text-color);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  justify-content: center;
+}
+
+.contact-item {
+  background: var(--card-background);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  transition: transform 0.5s, box-shadow 0.5s, background-color 0.5s;
+  opacity: 0;
+}
+
+.contact-item[data-animation] {
+  animation: fadeInUp var(--animation-duration) ease forwards;
+}
+
+.contact-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 200, 255, 0.4);
+}
+
+.contact-item i {
+  font-size: 3rem;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+.contact-item h3 {
+  font-size: 1.5rem;
+  color: var(--text-color);
+  margin-bottom: 10px;
+}
+
+.contact-item p,
+.contact-item a {
+  font-size: 1.2rem;
+  color: #008ecc;
+  text-decoration: none;
+}
+
+.contact-item p:hover,
+.contact-item a:hover {
+  text-decoration: underline;
+  color: white;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column; /* Stack navbar elements */
+    padding: 10px; /* Reduce padding */
+}
+
+.nav-links {
+    flex-wrap: wrap; /* Allow links to wrap */
+    justify-content: center;
+}
+
+.nav-links li {
+    margin: 5px; /* Adjust spacing between links */
+}
+  .contact-header h1 {
+    font-size: 2rem;
+  }
+
+  .contact-header p {
+    font-size: 1rem;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-item {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar .logo {
+    font-size: 20px;
+  }
+  .navbar {
+    flex-direction: column; /* Ensure navbar stacks on small screens */
+}
+
+.nav-links a {
+    font-size: 14px; /* Reduce font size of navbar links */
+}
+
+  .nav-links a {
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+
+  .contact-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .contact-header p {
+    font-size: 0.9rem;
+  }
+
+  .contact-item i {
+    font-size: 2.5rem;
+  }
+
+  .contact-item h3 {
+    font-size: 1.2rem;
+  }
+
+  .contact-item p,
+  .contact-item a {
+    font-size: 1rem;
+  }
+}
+
+/* Animations */
+@keyframes fadeInText {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

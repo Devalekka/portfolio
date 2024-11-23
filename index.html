@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Home Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">Devalekka</div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="skills.html">Skills</a></li>
+          <li><a href="education.html">Education</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">My Profile links</a></li>
+        </ul>
+      </nav>    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>I'm Devalekka</h1>
+            <h2 class="typing-text">Web Developer</h2>
+        </div>
+        <div class="hero-image">
+            <img src="profile.jpeg" alt="Profile Image">
+        </div>
+    </section>
+
+    <!-- Include any necessary JS for typing effect -->
+    <script src="script.js">
+        const textElement = document.querySelector(".typing-text");
+        const text = "Web Developer";
+        let index = 0;
+        let isAdding = true;
+
+        function typingEffect() {
+            if (isAdding) {
+                if (index < text.length) {
+                    textElement.textContent += text[index];
+                    index++;
+                    setTimeout(typingEffect, 150);
+                } else {
+                    isAdding = false;
+                    setTimeout(typingEffect, 1000); // Pause before deleting
+                }
+            } else {
+                if (index > 0) {
+                    textElement.textContent = textElement.textContent.slice(0, -1);
+                    index--;
+                    setTimeout(typingEffect, 100);
+                } else {
+                    isAdding = true;
+                    setTimeout(typingEffect, 500); // Pause before re-typing
+                }
+            }
+        }
+
+        typingEffect();
+    </script>
+</body>
+</html>
